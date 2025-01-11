@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package another;
+
+message Query {
+  string keyword = 1;
+}
+
+message Result {
+  string data = 1;
+}
+
+service ProductService {
+  rpc Search(Query) returns (Result);
+}
