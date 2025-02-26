@@ -1,15 +1,17 @@
 syntax = "proto3";
 
-package example;
-
-message RequestMessage {
-  string name = 1;
-}
-
-message ResponseMessage {
-  string message = 1;
-}
+package account;
 
 service AccountService {
-  rpc SayHello(RequestMessage) returns (ResponseMessage);
+  rpc GetAccount (GetAccountRequest) returns (GetAccountResponse);
+}
+
+message GetAccountRequest {
+  string id = 1;
+}
+
+message GetAccountResponse {
+  string id = 1;
+  string name = 2;
+  string email = 3;
 }
